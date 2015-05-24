@@ -136,6 +136,22 @@
             <control alias="fam(Player)[0x2].AutoLoopSelectAndTrigger"/>
           </controls>
         </mapping>
+        <mapping>
+          <events>
+            <midi type="Note" parameter="0x20" channel="0x1"/>
+          </events>
+          <controls>
+            <control alias="fam(Player)[0x1].BeatGridHalveBpm"/>
+          </controls>
+        </mapping>
+        <mapping>
+          <events>
+            <midi type="Note" parameter="0x24" channel="0x1"/>
+          </events>
+          <controls>
+            <control alias="fam(Player)[0x2].BeatGridHalveBpm"/>
+          </controls>
+        </mapping>
       </input-mappings>
       <output-mappings>
         <mapping>
@@ -207,8 +223,123 @@
           <midi type="Note" parameter="0x16" channel="0x1" value="0x3c"/>
         </mapping>
         <mapping>
+          <control alias="fam(Player)[0x1].LoopInSet" value="true"/>
+          <midi loop="true"/>
+          <midi type="Note" parameter="0x10" channel="0x1" value="0x3c" duration="500"/>
+          <midi type="Note" parameter="0x10" channel="1" value="0x3" duration="500"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].LoopOutSet" value="true"/>
+          <midi loop="true"/>
+          <midi type="Note" parameter="0x15" channel="0x01" duration="500" value="0x3c"/>
+          <midi type="Note" parameter="0x15" channel="1" value="0x3" duration="500"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].LoopInSet" value="false"/>
+          <midi type="Note" parameter="0x10" channel="0x01" value="0x3"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].LoopOutSet" value="false"/>
+          <midi type="Note" parameter="0x11" channel="0x01" value="0x3"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].LoopOnOff" value="true"/>
+          <midi type="Note" parameter="0x12" channel="0x1" value="0x3c"/>
+        </mapping>
+        <mapping>
           <control alias="fam(Player)[0x2].AutoLoopSelectAndTrigger" value="%"/>
           <midi type="Note" parameter="0x17" channel="0x1" value="0x3f"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].AutoLoopSelectAndTrigger" value="%"/>
+          <midi type="Note" parameter="0x13" channel="0x1" value="0x3f"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].Loaded" value="true"/>
+          <midi type="Note" parameter="0x20" channel="0x1" value="0x36"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].Loaded" value="false"/>
+          <midi type="Note" parameter="0x20" channel="0x1" value="0x3"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x2].Loaded" value="true"/>
+          <midi type="Note" parameter="0x24" channel="0x1" value="0x36"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x2].Loaded" value="false"/>
+          <midi type="Note" parameter="0x24" channel="0x1" value="0x3"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].Loading" value="true"/>
+          <midi loop="true"/>
+          <midi type="Note" parameter="0x20" channel="0x1" duration="25" value="0x3"/>
+          <midi type="Note" parameter="0x20" channel="0x1" value="0x36" duration="25"/>
+          <midi type="Note" parameter="0x20" channel="0x1" value="0x7e" duration="25"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x2].Loading" value="true"/>
+          <midi loop="true"/>
+          <midi type="Note" parameter="0x24" channel="0x1" duration="25" value="0x3"/>
+          <midi type="Note" parameter="0x24" channel="0x1" value="0x36" duration="25"/>
+          <midi type="Note" parameter="0x24" channel="0x1" value="0x7e" duration="25"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].TapTempoBlink" value="true"/>
+          <midi type="CC" parameter="0x6d" channel="0x1" value="0x7f"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].TapTempoBlink" value="false"/>
+          <midi type="CC" parameter="0x6d" channel="0x1" value="0x0"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x2].TapTempoBlink" value="true"/>
+          <midi type="CC" parameter="0x6e" channel="0x1" value="0x7f"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x2].TapTempoBlink" value="false"/>
+          <midi type="CC" parameter="0x6e" channel="0x1" value="0x0"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].BeatFlash" value="true"/>
+          <midi type="CC" parameter="0x6d" channel="0x1" value="0x3"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].BeatFlash" value="false"/>
+          <midi type="CC" parameter="0x6d" channel="0x1" value="0x0"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x2].BeatFlash" value="true"/>
+          <midi type="CC" parameter="0x6e" channel="0x1" value="0x3"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x2].BeatFlash" value="false"/>
+          <midi type="CC" parameter="0x6e" channel="0x1" value="0x0"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].EndOfTrackAlarm" value="true"/>
+          <midi loop="true"/>
+          <midi type="Note" parameter="0x30" channel="0x1" duration="25" value="0x3"/>
+          <midi type="Note" parameter="0x30" channel="1" value="0x35" duration="25"/>
+          <midi type="Note" parameter="0x30" channel="1" value="0x40" duration="25"/>
+          <midi type="Note" parameter="0x30" channel="1" value="0x35" duration="25"/>
+          <midi type="Note" parameter="0x30" channel="1" value="0x3" duration="25"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x1].EndOfTrackAlarm" value="false"/>
+          <midi type="Note" parameter="0x30" channel="0x1" value="0x0"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x2].EndOfTrackAlarm" value="false"/>
+          <midi type="Note" parameter="0x34" channel="0x1" value="0x0"/>
+        </mapping>
+        <mapping>
+          <control alias="fam(Player)[0x2].EndOfTrackAlarm" value="true"/>
+          <midi loop="true"/>
+          <midi type="Note" parameter="0x34" channel="0x1" value="0x7f" duration="25"/>
+          <midi type="Note" parameter="0x34" channel="1" value="0x2e" duration="25"/>
+          <midi type="Note" parameter="0x34" channel="1" value="0x3" duration="25"/>
+          <midi type="Note" parameter="0x34" channel="1" value="0x36" duration="25"/>
         </mapping>
       </output-mappings>
     </mappings>
